@@ -1,4 +1,4 @@
-# Remote Procedure Calls (RPC)
+# Remote Procedure Calls (RPC) --- Client and Server Example
 
 Code example supporting the RPC lecture material: a client that invokes a
 method on a remote server almost as if it were a local function call, using
