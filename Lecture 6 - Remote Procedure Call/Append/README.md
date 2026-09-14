@@ -1,4 +1,4 @@
-# Remote Procedure Calls (RPC)
+# Remote Procedure Calls (RPC) --- With and without Marshalling
 
 Code examples supporting the RPC lecture material: a client that invokes a
 method on a server almost as if it were a local function call, hiding the
