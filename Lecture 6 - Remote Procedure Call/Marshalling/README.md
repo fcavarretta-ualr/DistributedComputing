@@ -1,14 +1,11 @@
-# Fig 4.9 — RPC Marshalling
+# RPC Marshalling
 
-Same `APPEND`-over-a-shared-list RPC simulation as [Fig 4.8](../Fig-4.8-RPCWithAppend),
+Same `APPEND`-over-a-shared-list RPC simulation as [Append](../WithAppend),
 but this version makes marshalling explicit: the client and server stubs
 `pickle`/`unpickle` the call and its arguments instead of passing live Python
-objects through the channel. Paired with Fig 4.8 specifically to contrast
-what marshalling is for.
+objects through the channel. 
 
 ## The five files
-
-Same architectural split as Fig 4.8:
 
 | File | Layer | Contents |
 |---|---|---|
