@@ -1,4 +1,4 @@
-# Fig 4.8 — RPC with Append
+# RPC with Append
 
 A hand-rolled RPC simulation illustrating an `APPEND` remote call against a
 shared list, split across five files by architectural role.
