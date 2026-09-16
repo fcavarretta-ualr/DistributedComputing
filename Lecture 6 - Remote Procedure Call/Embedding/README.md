@@ -1,4 +1,4 @@
-# Fig 4.13 — Embedding RPCs in a Language
+# Embedding RPCs
 
 A real network RPC client/server pair built on [RPyC](https://rpyc.readthedocs.io/),
 showing how RPC is embedded directly into a host language (Python) rather
