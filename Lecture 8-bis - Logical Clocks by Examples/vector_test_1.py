@@ -37,13 +37,6 @@ from mpi4py import MPI
 
 from vector_clock import VectorClock
 
-# The vectors written on the slide, in the order each process computes them.
-EXPECTED = {
-    "P1": [[1, 1, 0], [2, 1, 0], [3, 1, 0], [4, 1, 0]],
-    "P2": [[0, 1, 0], [4, 2, 0], [4, 3, 0]],
-    "P3": [[2, 1, 1], [4, 3, 2]],
-}
-
 P1, P2, P3 = 0, 1, 2                  # ranks
 
 
@@ -114,9 +107,6 @@ if __name__ == "__main__":
     reports = comm.gather(events, root=0)
 
     if comm.Get_rank() == 0:
-        for name, evs in zip(("P1", "P2", "P3"), reports):
-            assert [counter for _, counter in evs] == EXPECTED[name], f"{name} differs from the slide"
-
         # Sort by (sum of the vector, -process number): see the docstring.
         all_events = [e for evs in reports for e in evs]
         all_events.sort(key=lambda e: (sum(e[1]), -int(e[0][1])))

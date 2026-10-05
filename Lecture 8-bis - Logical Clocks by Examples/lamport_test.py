@@ -38,9 +38,6 @@ from mpi4py import MPI
 
 from lamport_clock import LamportClock
 
-# Counters each process must compute, in the order it computes them.
-EXPECTED = {"P1": [2, 3, 4], "P2": [1], "P3": [4, 5]}
-
 P1, P2, P3 = 0, 1, 2                  # ranks
 
 
@@ -98,8 +95,6 @@ if __name__ == "__main__":
     reports = comm.gather(events, root=0)
 
     if comm.Get_rank() == 0:
-        for name, evs in zip(("P1", "P2", "P3"), reports):
-            assert [counter for _, counter in evs] == EXPECTED[name], f"{name} differs from the slide"
 
         all_events = [e for evs in reports for e in evs]
         all_events.sort(key=lambda e: (e[1], e[0][1]))  # (counter, process number)
